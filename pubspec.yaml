@@ -3,6 +3,9 @@ description: Over-The-Air updates for Flutter Framework localizations.
 version: 0.8.0
 repository: https://github.com/justprodev/flutter_localizations_ota
 
+topics:
+  - i18n
+
 environment:
   sdk: ">=3.4.0 <4.0.0"
 
