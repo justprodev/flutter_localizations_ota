@@ -1,3 +1,6 @@
+[![pub package](https://img.shields.io/pub/v/flutter_localizations_ota.svg)](https://pub.dev/packages/flutter_localizations_ota)
+![tests](https://github.com/justprodev/flutter_localizations_ota/actions/workflows/pull_request.yaml/badge.svg)
+
 Over-The-Air updates for [Flutter Framework localizations](https://github.com/flutter/flutter/tree/master/packages/flutter_localizations).
 
 Features:
