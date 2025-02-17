@@ -115,4 +115,6 @@ class MyHomePage extends StatelessWidget {
 ```
 ##
 
-Find `example` for more info
+Find `example` for more info.
+
+[Example deployed to web](https://justprodev.com/partners/flutter_localizations_ota/web/)
