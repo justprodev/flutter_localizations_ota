@@ -1,0 +1,38 @@
+{
+  "fl_ota_version": "1",
+
+  "nMails": "{count,plural, =0{You have no mails, {name}} =1{{name}! You have one mail!} =2{You have two mails, {name}} few{You have {count} mails, {name}} many{You have several ({count}) mails, {name}} other{You have like {count} mails, {name}}}",
+  "@nMails": {
+    "description": "A plural message that informs the user the amount of mails he has to read",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "name": {
+        "example": "Nico"
+      }
+    }
+  },
+  "new_test_key": "A new test key",
+  "@new_test_key": {
+    "description": "Key added just for testing purposes"
+  },
+  "pageHomeBirthday": "{sex, select, male{His birthday} female{Her birthday} other{The birthday of them}}",
+  "@pageHomeBirthday": {
+    "description": "Sex testing key",
+    "placeholders": {
+      "sex": {
+        "type": "String"
+      }
+    }
+  },
+  "trafficLight": "{light, select, red{stop} yellow{ready to go} green{go} other{-}}",
+  "@trafficLight": {
+    "description": "Select testing key",
+    "placeholders": {
+      "light": {
+        "type": "String"
+      }
+    }
+  }
+}

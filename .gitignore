@@ -1,0 +1,10 @@
+.dart_tool/
+.idea
+
+# generated files
+**.g.dart
+
+/pubspec.lock
+/.flutter-plugins-dependencies
+/.flutter-plugins
+build

@@ -1,0 +1,82 @@
+// file is used to test the generated l10n_remote.dart file
+// The file will be invoked by the generator_test.dart
+
+import 'l10n_en.dart';
+import 'l10n_remote.dart';
+import 'package:test/test.dart';
+import 'package:flutter_localizations_ota/src/arb_worker/arb_worker.dart';
+
+void main() {
+  final L10nEn l10n = L10nEn();
+  final testArbWorker = TestArbWorker({}, 'en');
+  final L10nRemote l10nRemote = L10nRemote(l10n, testArbWorker);
+
+  test('Test generated l10n', () {
+    expect(l10n.fl_ota_version, l10nRemote.fl_ota_version);
+    expect(testArbWorker.lastRequestedKey, 'fl_ota_version');
+    expect(testArbWorker.lastRequestedArgs, null);
+
+    expect(l10n.nMails(0, 'name'), l10nRemote.nMails(0, 'name'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 0, 'name': 'name'});
+
+    expect(l10n.nMails(1, 'name1'), l10nRemote.nMails(1, 'name1'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 1, 'name': 'name1'});
+
+    expect(l10n.nMails(2, 'name2'), l10nRemote.nMails(2, 'name2'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 2, 'name': 'name2'});
+
+    expect(l10n.nMails(3, 'name3'), l10nRemote.nMails(3, 'name3'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 3, 'name': 'name3'});
+
+    expect(l10n.nMails(4, 'name4'), l10nRemote.nMails(4, 'name4'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 4, 'name': 'name4'});
+
+    expect(l10n.nMails(5, 'name5'), l10nRemote.nMails(5, 'name5'));
+    expect(testArbWorker.lastRequestedKey, 'nMails');
+    expect(testArbWorker.lastRequestedArgs, {'count': 5, 'name': 'name5'});
+
+    expect(l10n.new_test_key, l10nRemote.new_test_key);
+    expect(testArbWorker.lastRequestedKey, 'new_test_key');
+    expect(testArbWorker.lastRequestedArgs, null);
+
+    expect(l10n.pageHomeBirthday('name'), l10nRemote.pageHomeBirthday('name'));
+    expect(testArbWorker.lastRequestedKey, 'pageHomeBirthday');
+    expect(testArbWorker.lastRequestedArgs, {'sex': 'name'});
+
+    expect(l10n.trafficLight('red'), l10nRemote.trafficLight('red'));
+    expect(testArbWorker.lastRequestedKey, 'trafficLight');
+    expect(testArbWorker.lastRequestedArgs, {'light': 'red'});
+
+    expect(l10n.trafficLight('yellow'), l10nRemote.trafficLight('yellow'));
+    expect(testArbWorker.lastRequestedKey, 'trafficLight');
+    expect(testArbWorker.lastRequestedArgs, {'light': 'yellow'});
+
+    expect(l10n.trafficLight('green'), l10nRemote.trafficLight('green'));
+    expect(testArbWorker.lastRequestedKey, 'trafficLight');
+    expect(testArbWorker.lastRequestedArgs, {'light': 'green'});
+
+    expect(l10n.trafficLight('abc'), l10nRemote.trafficLight('abc'));
+    expect(testArbWorker.lastRequestedKey, 'trafficLight');
+    expect(testArbWorker.lastRequestedArgs, {'light': 'abc'});
+  });
+}
+
+class TestArbWorker extends ArbWorker {
+  TestArbWorker(super.arbNodes, super.locale);
+
+  String? lastRequestedKey;
+  Map<String, dynamic>? lastRequestedArgs;
+
+  @override
+  String? get(String key, [Map<String, dynamic>? args]) {
+    lastRequestedKey = key;
+    lastRequestedArgs = args;
+    return null;
+  }
+}
+    
