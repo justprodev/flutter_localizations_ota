@@ -8,10 +8,13 @@ import 'dart:io';
 import 'package:flutter_localizations_ota/src/generator/generator.dart';
 import 'package:test/test.dart';
 
+import 'lib/check_generated_dir.dart';
+
 const generatorResultFileName = '_generator_result_test.dart_';
 
 void main() {
   test('test generator itself', () async {
+    checkGeneratedDir();
     for(var f in Directory('test/golden').listSync()) {
       if(f is File) {
         f.copySync(f.path.replaceAll('golden', 'generated'));

@@ -7,6 +7,8 @@ import 'package:flutter_localizations_ota/src/arb_worker/arb_parser.dart';
 import 'package:flutter_localizations_ota/src/arb_worker/arb_worker.dart';
 import 'package:test/test.dart';
 
+import 'lib/check_generated_dir.dart';
+
 const generatedFileName = 'l10n_test.g.dart';
 
 void main() {
@@ -16,6 +18,7 @@ void main() {
     ArbWorker arbWorker = ArbWorker(nodes, 'ru');
 
     File input = File('test/golden2/l10n_ru.dart');
+    checkGeneratedDir();
     IOSink output = File('test/generated/$generatedFileName').openWrite();
 
     output.writeln('''
