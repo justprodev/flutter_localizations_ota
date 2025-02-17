@@ -78,7 +78,7 @@ void main() {
     await output.close();
 
     final result = Process.runSync(
-      'flutter.bat', // windows
+      Platform.isWindows ? 'flutter.bat' : 'flutter',
       ['test', 'test/generated/$generatedFileName'],
       stdoutEncoding: Encoding.getByName('UTF-8'),
       stderrEncoding: Encoding.getByName('UTF-8'),
