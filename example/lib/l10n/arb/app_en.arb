@@ -1,0 +1,16 @@
+{
+  "fl_ota_version": "1",
+
+  "title": "Example of using of the package \"{package}\"",
+  "@title": {
+    "placeholders": {
+      "package": {
+        "type": "String"
+      }
+    }
+  },
+  "currentLocaleTitle": "Current locale",
+  "remoteUpdateTitle": "Remote update",
+
+  "testResource": "This is local value of the test resource"
+}
