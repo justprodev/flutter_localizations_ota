@@ -59,6 +59,14 @@ void compareLocalVsRemote(L10n l10n, L10n l10nRemote, FakeArbWorker arbWorker) {
   expect(l10n.trafficLight('abc'), l10nRemote.trafficLight('abc'));
   expect(arbWorker.lastRequestedKey, 'trafficLight');
   expect(arbWorker.lastRequestedArgs, {'light': 'abc'});
+
+  expect(l10n.widgetTitle, l10nRemote.widgetTitle);
+  expect(arbWorker.lastRequestedKey, 'widgetTitle');
+  expect(arbWorker.lastRequestedArgs, null);
+
+  expect(l10n.getSomeText, l10nRemote.getSomeText);
+  expect(arbWorker.lastRequestedKey, 'getSomeText');
+  expect(arbWorker.lastRequestedArgs, null);
 }
 
 /// A test implementation of the ARB worker that records the last requested key and arguments.
