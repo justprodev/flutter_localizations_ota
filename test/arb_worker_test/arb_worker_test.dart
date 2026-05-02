@@ -9,13 +9,11 @@ import 'package:flutter_localizations_ota/src/arb_worker/arb_parser.dart';
 import 'package:flutter_localizations_ota/src/arb_worker/arb_worker.dart';
 import 'package:test/test.dart';
 
-import '../lib/check_generated_dir.dart';
-
 const testDir = 'test/arb_worker_test';
 
 main() {
   group('english straightforward working well', () {
-    final testArb = File('$testDir/app_en.arb').readAsStringSync();
+    final testArb = File('$testDir/arb/app_en.arb').readAsStringSync();
     var worker = ArbWorker(parseArbContent(testArb), 'en');
 
     test('retrieves the single key', () {
@@ -52,11 +50,10 @@ main() {
   // generating test file, writing tests and running them via `flutter test`
   test('Compare ARB translator nodes with L10n', () async {
     const generatedFileName = 'l10n_test.g.dart';
-    final nodes = parseArbContent(File('$testDir/app_ru.arb').readAsStringSync());
+    final nodes = parseArbContent(File('$testDir/arb/app_ru.arb').readAsStringSync());
     ArbWorker arbWorker = ArbWorker(nodes, 'ru');
 
-    prepareGeneratedDir(testDir);
-    File input = File('$testDir/golden/l10n_ru.dart');
+    File input = File('$testDir/generated/l10n_ru.dart');
     IOSink output = File('$testDir/generated/$generatedFileName').openWrite();
 
     output.writeln('''
