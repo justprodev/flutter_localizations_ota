@@ -1,6 +1,6 @@
 name: flutter_localizations_ota
 description: Over-The-Air updates for Flutter Framework localizations.
-version: 0.8.1
+version: 0.8.2
 repository: https://github.com/justprodev/flutter_localizations_ota
 
 topics:
