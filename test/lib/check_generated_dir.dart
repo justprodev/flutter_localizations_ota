@@ -2,9 +2,21 @@
 
 import 'dart:io';
 
-void checkGeneratedDir() {
-  final generatedDir = Directory('test/generated');
-  if (!generatedDir.existsSync()) {
-    generatedDir.createSync();
+void prepareGeneratedDir([String testDir = 'test']) {
+  final generatedDir = Directory('$testDir/generated');
+
+  if (generatedDir.existsSync()) {
+    generatedDir.deleteSync(recursive: true);
+  }
+  generatedDir.createSync();
+
+  Directory goldenDir = Directory('$testDir/golden');
+
+  if (goldenDir.existsSync()) {
+    for(var f in goldenDir.listSync()) {
+      if(f is File) {
+        f.copySync(f.path.replaceAll('golden', 'generated'));
+      }
+    }
   }
 }

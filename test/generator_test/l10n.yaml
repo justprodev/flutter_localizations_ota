@@ -1,11 +1,11 @@
 # https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization
 # https://flutter.dev/go/i18n-user-guide
-arb-dir: test/assets/
+arb-dir: not_used_in_tests
 template-arb-file: app_en.arb
 output-localization-file: l10n.dart
 output-class: L10n
 
 synthetic-package: false
-output-dir: test/generated
+output-dir: test/generator_test/generated
 
 no-nullable-getter: true
