@@ -122,6 +122,10 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'{light, select, red{stop} yellow{ready to go} green{go} other{-}}'**
   String trafficLight(String light);
+
+  String get widgetTitle;
+
+  String get getSomeText;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
