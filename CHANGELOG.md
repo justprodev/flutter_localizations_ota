@@ -1,3 +1,7 @@
+### 0.8.3 (2026-09-17)
+
+- Update dependencies
+
 ### 0.8.2 (2025-05-02)
 
 - [Fix generator issues ('get' keyword in keys)](https://github.com/justprodev/flutter_localizations_ota/pull/7)
